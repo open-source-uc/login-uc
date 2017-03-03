@@ -1,0 +1,24 @@
+{
+  "name": "@open-source-uc/login-uc",
+  "version": "0.0.1",
+  "description": "Universal Javascript module to perform authenticated requests to UC's services. Edit",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "test": "jest"
+  },
+  "repository": "https://github.com/open-source-uc/login-uc.git",
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "es2015"
+    ]
+  }
+}
