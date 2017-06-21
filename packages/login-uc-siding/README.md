@@ -5,7 +5,7 @@
 Install this module with:
 
 ```sh
-yarn add lodash axios login-uc-siding
+yarn add popsicle login-uc-siding
 ```
 
 ### Usage
@@ -16,12 +16,12 @@ import Siding from "login-uc-siding";
 async function main() {
   const siding = new Siding({
     username: "username",
-    password: "badpassword",
+    password: "password",
   });
 
   await instance.login();
-  const axios = instance.client;
-  const { data } = await axios.get("/siding/dirdes/ingcursos/cursos/vista.phtml");
+  await instance.verify();
+  const { body, headers } = await instance.get("/siding/dirdes/ingcursos/cursos/vista.phtml");
   // ...
 }
 
