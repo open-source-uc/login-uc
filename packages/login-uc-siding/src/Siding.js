@@ -1,6 +1,6 @@
+"use strict";
+
 import axios from "axios";
-import axiosCookieJarSupport from "@3846masa/axios-cookiejar-support";
-import tough from "tough-cookie";
 import qs from "qs";
 import get from "lodash/get";
 
@@ -16,15 +16,11 @@ export default class Siding {
     this.username = credentials.username.split("@")[0];
     this.password = credentials.password;
 
-    this.cookieJar = new tough.CookieJar();
     this.client = axios.create({
       timeout: 3000,
       baseURL: "https://intrawww.ing.puc.cl/",
       withCredentials: true,
     });
-    axiosCookieJarSupport(this.client);
-    this.client.defaults.jar = this.cookieJar;
-    this.client.defaults.withCredentials = true;
   }
 
   verify() {

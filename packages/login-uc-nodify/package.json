@@ -1,9 +1,9 @@
 {
-  "name": "login-uc-siding",
-  "version": "0.1.2",
+  "name": "login-uc-nodify",
+  "version": "0.0.0",
   "description": "",
-  "main": "lib/Siding.js",
-  "module": "src/Siding.js",
+  "main": "lib/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "babel src --out-dir lib --source-maps",
     "test": "jest"
@@ -13,24 +13,16 @@
     "src"
   ],
   "repository": "https://github.com/open-source-uc/login-uc.git",
-  "homepage": "https://github.com/open-source-uc/login-uc/tree/master/packages/login-uc-siding",
   "author": "Patricio López <lopezjuripatricio@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "login-uc-error": "^0.1.0",
-    "qs": "^6.4.0"
+    "@3846masa/axios-cookiejar-support": "^0.0.4"
   },
   "devDependencies": {
-    "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.5.2",
-    "jest": "^20.0.4",
-    "login-uc-nodify": "*"
-  },
-  "peerDependencies": {
-    "axios": "^0.16.2",
-    "lodash": "^4.17.4"
+    "jest": "^20.0.4"
   },
   "babel": {
     "presets": [
