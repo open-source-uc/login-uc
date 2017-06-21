@@ -1,11 +1,10 @@
 "use strict";
 
 import axiosCookieJarSupport from "@3846masa/axios-cookiejar-support";
-import tough from "tough-cookie";
 
-export default function nodify(instance) {
+export default function nodify(instance, cookieJar) {
   axiosCookieJarSupport(instance.client);
-  instance.cookieJar = new tough.CookieJar();
+  instance.cookieJar = cookieJar;
   instance.client.defaults.jar = instance.cookieJar;
   instance.client.defaults.withCredentials = true;
 

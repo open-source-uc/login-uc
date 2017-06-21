@@ -20,13 +20,15 @@ export default class Siding {
       timeout: 3000,
       baseURL: "https://intrawww.ing.puc.cl/",
       withCredentials: true,
+      ...options,
     });
   }
 
   verify() {
-    return this.client.head("/siding").then(({ headers }) => {
+    return this.client.get("/siding").then(({ data }) => {
       // TODO: verify this is a valid check
-      const isLogged = get(headers, "cache-control", null);
+      // const isLogged = get(headers, "cache-control", null);
+      const isLogged = data.indexOf("passwd") === -1;
 
       if (!isLogged) {
         throw new LoginUCError("Failed Siding login", {

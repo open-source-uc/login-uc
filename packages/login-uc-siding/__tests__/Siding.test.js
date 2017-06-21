@@ -3,6 +3,7 @@
 import Siding from "../src/Siding";
 import LoginUCError from "login-uc-error";
 import nodify from "login-uc-nodify";
+import tough from "tough-cookie";
 
 describe("Siding", () => {
   it("fails with login-uc-error", async () => {
@@ -10,7 +11,7 @@ describe("Siding", () => {
       username: "username",
       password: "badpassword",
     });
-    nodify(instance);
+    nodify(instance, new tough.CookieJar());
 
     expect(instance).toBeTruthy();
 
