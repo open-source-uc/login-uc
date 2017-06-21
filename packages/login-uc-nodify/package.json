@@ -1,6 +1,6 @@
 {
   "name": "login-uc-nodify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "lib/index.js",
   "module": "src/index.js",
