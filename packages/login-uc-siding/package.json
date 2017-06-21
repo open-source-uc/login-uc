@@ -1,6 +1,6 @@
 {
   "name": "login-uc-siding",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "",
   "main": "lib/Siding.js",
   "module": "src/Siding.js",
