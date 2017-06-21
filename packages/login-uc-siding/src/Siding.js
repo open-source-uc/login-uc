@@ -12,16 +12,18 @@ export default class Siding {
       throw new LoginUCError("Must set credentials on constructor");
     }
 
-    this.options = options;
+    this.options = Object.assign(
+      {
+        timeout: 3000,
+        baseURL: "https://intrawww.ing.puc.cl/",
+        withCredentials: true,
+      },
+      options
+    );
     this.username = credentials.username.split("@")[0];
     this.password = credentials.password;
 
-    this.client = axios.create({
-      timeout: 3000,
-      baseURL: "https://intrawww.ing.puc.cl/",
-      withCredentials: true,
-      ...options,
-    });
+    this.client = axios.create(this.options);
   }
 
   verify() {
