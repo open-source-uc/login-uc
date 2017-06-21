@@ -1,6 +1,6 @@
 {
   "name": "login-uc-error",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/Error.js",
   "module": "src/Error.js",
@@ -24,8 +24,6 @@
     "babel-preset-env": "^1.5.2",
     "jest": "^20.0.4"
   },
-  "peerDependencies": {},
-  "optionalDependencies": {},
   "babel": {
     "presets": [
       "env"

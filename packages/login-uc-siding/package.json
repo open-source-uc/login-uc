@@ -1,6 +1,6 @@
 {
   "name": "login-uc-siding",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/Siding.js",
   "module": "src/Siding.js",
@@ -16,8 +16,8 @@
   "author": "Patricio López <lopezjuripatricio@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "login-uc-error": "*",
     "@3846masa/axios-cookiejar-support": "^0.0.4",
+    "login-uc-error": "^0.1.0",
     "qs": "^6.4.0"
   },
   "devDependencies": {
