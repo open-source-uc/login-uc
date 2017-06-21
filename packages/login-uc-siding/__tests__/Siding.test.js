@@ -4,7 +4,7 @@ import LoginUCError from "login-uc-error";
 describe("Siding", () => {
   it("fails with login-uc-error", async () => {
     const instance = new Siding({
-      username: "username", // without @uc.cl
+      username: "username",
       password: "badpassword",
     });
     expect(instance).toBeTruthy();

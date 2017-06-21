@@ -27,22 +27,22 @@ export default class Siding {
     this.client.defaults.withCredentials = true;
   }
 
-  async verify() {
-    const { headers } = await this.client.head("/siding");
+  verify() {
+    return this.client.head("/siding").then(({ headers }) => {
+      // TODO: verify this is a valid check
+      const isLogged = get(headers, "cache-control", null);
 
-    // TODO: verify this is a valid check
-    const isLogged = get(headers, "cache-control", null);
-
-    if (!isLogged) {
-      throw new LoginUCError("Failed Siding login", {
-        username: this.username,
-      });
-    } else {
-      return true;
-    }
+      if (!isLogged) {
+        throw new LoginUCError("Failed Siding login", {
+          username: this.username,
+        });
+      } else {
+        return this;
+      }
+    });
   }
 
-  async login() {
+  login() {
     const body = qs.stringify({
       login: this.username,
       passwd: this.password,
@@ -51,10 +51,16 @@ export default class Siding {
       cd: "",
     });
 
-    const { headers } = await this.client.post("/siding/index.phtml", body);
-    const cookie = get(headers, ["set-cookie", 0], "").replace("; path=/", "");
-    this.client.defaults.headers.common["Cookie"] = cookie;
-
-    return this.verify();
+    return this.client
+      .post("/siding/index.phtml", body)
+      .then(({ headers }) => {
+        const cookie = get(headers, ["set-cookie", 0], "").replace(
+          "; path=/",
+          ""
+        );
+        this.client.defaults.headers.common["Cookie"] = cookie;
+        return this;
+      })
+      .then(() => this.verify());
   }
 }
