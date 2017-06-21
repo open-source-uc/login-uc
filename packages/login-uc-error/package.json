@@ -1,0 +1,37 @@
+{
+  "name": "login-uc-error",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/Error.js",
+  "module": "src/Error.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "test": "jest"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": "https://github.com/open-source-uc/login-uc.git",
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "es6-error": "^4.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.5.2",
+    "jest": "^20.0.4"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

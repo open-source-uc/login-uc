@@ -1,0 +1,46 @@
+{
+  "name": "login-uc-siding",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/Siding.js",
+  "module": "src/Siding.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "test": "jest"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": "https://github.com/open-source-uc/login-uc.git",
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "login-uc-error": "*",
+    "@3846masa/axios-cookiejar-support": "^0.0.4",
+    "qs": "^6.4.0"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.5.2",
+    "jest": "^20.0.4"
+  },
+  "peerDependencies": {
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4"
+  },
+  "optionalDependencies": {
+    "mz": "^2.6.0",
+    "react-native-fs": "^2.3.3"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
