@@ -5,6 +5,7 @@
   "main": "lib/Siding.js",
   "module": "src/Siding.js",
   "scripts": {
+    "prebuild": "rimraf lib",
     "build": "babel src --out-dir lib --source-maps",
     "test": "jest"
   },
@@ -26,6 +27,7 @@
     "babel-preset-env": "^1.5.2",
     "jest": "^20.0.4",
     "popsicle": "^9.1.0",
+    "rimraf": "^2.6.1",
     "umd-tough-cookie": "^2.3.2"
   },
   "peerDependencies": {

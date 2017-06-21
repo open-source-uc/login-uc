@@ -2,6 +2,7 @@
   "description": "Universal Javascript module to perform authenticated requests to UC's services.",
   "scripts": {
     "lerna": "lerna",
+    "postinstall": "npm run lerna -- bootstrap",
     "build": "npm run lerna -- run build",
     "prepublish": "npm run build",
     "publish": "npm run lerna -- publish",
